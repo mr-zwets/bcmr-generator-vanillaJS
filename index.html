@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://unpkg.com/chota@0.8.0/dist/chota.min.css">
+    <title>BCMR generator</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <main>
+      <h1>BCMR generator</h1>
+      <div style="font-weight: bold; margin-bottom: 15px;">Generate the BCMR Json file for your fungible token!</div>
+      <div style="display: flex;justify-content: space-between;">TokenId *<div>(*) means required</div></div>
+      <input placeholder="8473d94f604de351cdee3030f6c354d36b257861ad8e95bbc0a06fbab2a2f" id="tokenId">
+      Token Name *
+      <input placeholder="DogeCash"  id="tokenName">
+      Token Description *
+      <input placeholder="Don't let your dreams be memes"  id="tokenDescription"> 
+      Token Symbol *
+      <input placeholder="DOGECASH" id="tokenSymbol">
+      Link Icon (https or ipfs)
+      <input placeholder="https:/example.com/Dogecoin_Logo.png" id="iconUri">
+      Decimals
+      <input type="number" placeholder="0" id="tokenDecimals">
+      Link website
+      <input placeholder="https:/example.com" id="webUrl">
+      <div style="margin: 5px 0;">Extra Links
+        <button type="button" style="padding: 3px 5px; vertical-align: text-top;" onclick="removeUri()">-</button> 
+        <button type="button"  style="padding: 3px 5px; vertical-align: text-top;"  onclick="addUri()">+</button> 
+      </div>
+
+      <template id="uri-template">
+        <div style="display: flex; margin-top: 10px;">
+          <select name="uriSelect" id="uriSelect" style="width: 150px; display: inline-block;">
+            <option value="">- select -</option>
+            <option value="blog">blog</option>
+            <option value="chat">chat</option>
+            <option value="forum">forum</option>
+            <option value="support">support</option>
+            <option value="twitter">twitter</option>
+            <option value="telegram">telegram</option>
+            <option value="reddit">reddit</option>
+            <option value="discord">discord</option>
+            <option value="youtube">youtube</option>
+          </select> 
+          <input placeholder="https:/example.com" id="uriInput">
+        </div>
+     </template>
+     <div id="Placeholder"></div>
+
+      <input class="button primary" type="button" style="margin-top:15px" value="Download BCMR json file" onclick="createBcmrFile()">
+
+      <footer id="githubLink">
+        <a href="https://github.com/mr-zwets/bcmr-generator" target="_blank" >
+            <img class="githublogo" src="./github.png" alt="Github logo">
+        </a>
+        <div style="margin-left: 10px;height: 35px;">
+          <a href="https://github.com/mr-zwets/bcmr-generator" target="_blank">
+            see GitHub code
+          </a>
+        </div>
+        
+      </footer>
+
+    </main>
+	<script src="index.js"></script>
+  </body>
+</html>
