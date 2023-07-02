@@ -59,6 +59,13 @@ function createJsonObj() {
   const registryIdentityName = `bcmr for ${tokenName}`;
   const registryIdentityDescription = `self-published bcmr for ${tokenName}`;
 
+  const hasRequiredFields = tokenId && tokenName && tokenDescription && tokenSymbol
+
+  if(!hasRequiredFields){
+    alert("Fill in all the required fields before generating the JSON file!")
+    return
+  }
+
   // Generate BCMR json obj
   const bcmrJsonObj = {
     "$schema": "https://cashtokens.org/bcmr-v2.schema.json",
