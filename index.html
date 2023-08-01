@@ -7,11 +7,13 @@
     <link rel="stylesheet" href="https://unpkg.com/chota@0.8.0/dist/chota.min.css">
     <title>BCMR generator</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="switchery/switchery.css" />
+    <script src="switchery/switchery.js"></script>
   </head>
   <body>
     <main>
       <h1>BCMR generator</h1>
-      <div style="font-weight: bold; margin-bottom: 15px;">Generate the BCMR Json file for your fungible token!</div>
+      <div style="font-weight: bold; margin-bottom: 15px;">Generate the BCMR Json file for your CashTokens project!</div>
       <div style="display: flex;justify-content: space-between;">TokenId *<div>(*) means required</div></div>
       <input placeholder="8473d94f604de351cdee3030f6c354d36b257861ad8e95bbc0a06fbab2a2f" id="tokenId">
       Token Name *
@@ -24,6 +26,25 @@
       <input placeholder="https:/example.com/Dogecoin_Logo.png" id="iconUri">
       Decimals (suggested to not use more than 8)
       <input type="number" placeholder="0" id="tokenDecimals">
+      Has NFTs
+      <input type="checkbox" class="js-switch js-check-change" id="hasNFTsSwitch"><br/>
+      <div id="NFTfields" style="display: none; margin-left: 25px;">
+        Number of unique NFTs *
+        <input type="number" placeholder="10" id="numberNFTs">
+        NFT Name * ( <code>{i}</code> will be replaced by the NFT number)
+        <input placeholder="ABC collection #{i}"  id="nftName">
+        NFT Description ( <code>{i}</code> will be replaced by the NFT number)
+        <input placeholder="Number {i} of the ABC collection with 500 NFTs"  id="nftDescription"> 
+        <b>Image folder:</b> The image folder should have the 400x400 NFT icons named as <code>1.png</code>, <code>2.png</code>, etc.<br/>
+        <span style="margin-left: 10px;">Optional high-res images should be included as <code>1-img.png</code>, <code>2-img.png</code>, etc.<br/></span> 
+        Link Image Folder (https or ipfs)
+        <input placeholder="ipfs://bafybeifz7yag2hlxvmaahyo5kl5etajycxtxsryadcawzt4dgy3hrzzxdq" id="nftIconUri">
+        Image Type (png, svg, ...)
+        <input placeholder="png" id="nftIconType">
+        Has High-resolution Image for NFTs (besides 400x400px icon)
+        <input type="checkbox" class="js-switch js-check-change" id="hasImagesSwitch"><br/>
+        <br/>
+      </div>
       Link website
       <input placeholder="https:/example.com" id="webUrl">
       <div style="margin: 5px 0;">Extra Links
