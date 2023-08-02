@@ -53,7 +53,6 @@ function createList(listUris) {
     uriInput.onchange = (event) => uriValue(index, event);
     if(uri[0]) uriSelect.value = uri[0];
     if(uri[1]) uriInput.value = uri[1];
-    else{ uriSelect.value = ""}
     ul.appendChild(uriItem);
   });
   console.log(listUris)
