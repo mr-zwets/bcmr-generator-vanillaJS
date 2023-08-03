@@ -131,7 +131,9 @@ function createJsonObj() {
     for(let i=1; i<=numberNFTs; i++){
       let nftNameNumbered = nftName.replace("{i}", i);
       let nftDescriptionNumbered = nftDescription.replace("{i}", i);
-      NFTtypes[i] = {
+      let nftCommitment = i.toString(16);
+      if(nftCommitment.length % 2 != 0) nftCommitment = `0${nftCommitment}`;
+      NFTtypes[nftCommitment] = {
         "name": nftNameNumbered,
         "description": nftDescriptionNumbered ,
         "uris": {
