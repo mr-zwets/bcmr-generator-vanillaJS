@@ -140,7 +140,7 @@ function createJsonObj() {
           "icon": nftIconUri + `/${i}.${nftIconType}`
         }
       }
-      if(hasNFTimages) NFTtypes[i].uris.image = nftIconUri + `/${i}-img.${nftIconType}`
+      if(hasNFTimages) NFTtypes[nftCommitment].uris.image = nftIconUri + `/${i}-img.${nftIconType}`
     }
   }
   if(webUrl) snapshot.uris.web = webUrl;
