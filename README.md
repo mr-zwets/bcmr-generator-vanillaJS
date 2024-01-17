@@ -1,4 +1,6 @@
-# BCMR Generator
+# BCMR Generator (Vanilla-Js)
+
+The BCMR Generator has been rewritten with Vue-js and now lives on [here](https://github.com/mr-zwets/bcmr-generator).
 
 Fill-in form to create the BCMR Json file for a CashTokens project!
 
